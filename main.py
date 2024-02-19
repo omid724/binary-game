@@ -12,7 +12,9 @@ def decimal_to_binary(n):
             # divide with integral result (discard remainder)
             dec_bin(m // 2)
 
-        x.insert(0, str(m % 2))
+        # Put at the end of list x
+        # (Due to the recursive function last run do this first)
+        x.insert(len(x), str(m % 2))
 
     dec_bin(n)
     return "".join(x)
